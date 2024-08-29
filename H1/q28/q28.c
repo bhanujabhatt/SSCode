@@ -1,37 +1,34 @@
 /*
 ======================================================================================================================================================================
-Name : handsonprog19.c
-Author :Bhanuja Bhatt
-Description : Write a program to find out time taken to execute getpid system call. Use time stamp counter.
-Date: 25th Aug, 2024
+Name : handsonprog28.c
+Author : bhanuja bhatt
+Description : Write a program to get maximum and minimum real time priority.
+Date: 26 aug 2024
 ======================================================================================================================================================================
-
 ======================================================================================================================================================================
 Sample Output:
-PID: 108545
-Time taken: 17127 TSC ticks
+Maximum real-time priority: 99
+Minimum real-time priority: 1
 
 ======================================================================================================================================================================
+
 */
 #include <stdio.h>
-#include <stdint.h>
-#include <unistd.h>
-static inline uint64_t read_tsc() {
-    uint32_t low, high;
-    __asm__ __volatile__ (
-        "rdtsc" 
-        : "=a" (low), "=d" (high)
-    );
-    return ((uint64_t)high << 32) | low;
-}
+#include <sched.h>
 
 int main() {
-    uint64_t start = read_tsc();
-    pid_t pid = getpid();
-    uint64_t end = read_tsc();
-    uint64_t elapsed = end - start;
-    printf("PID: %d\n", pid);
-    printf("Time taken: %lu TSC ticks\n", elapsed);
+    int max_priority, min_priority;
+
+    max_priority = sched_get_priority_max(SCHED_FIFO);
+    min_priority = sched_get_priority_min(SCHED_FIFO);
+
+    if (max_priority == -1 || min_priority == -1) {
+        perror("sched_get_priority_max/min failed");
+        return 1;
+    }
+
+    printf("Maximum real-time priority: %d\n", max_priority);
+    printf("Minimum real-time priority: %d\n", min_priority);
 
     return 0;
 }

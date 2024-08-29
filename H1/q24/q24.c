@@ -1,4 +1,21 @@
+/*
+======================================================================================================================================================================
+Name : handsonprog24.c
+Author : Bhanuja BHatt
+Description : Write a program to create an orphan process
+Date:21st aug, 2024.
+======================================================================================================================================================================
+Sample Output:
+n parent process, with PID: 110107
+Child PID is: 110108
+In child, process, PID: 110108
+Parent PID is: 110107
+bhanuja-bhatt@bhanuja-bhatt-HP-Laptop:~/my-repo2/H1/q24$ In child, process, PID: 110108
+Parent PID is: 1788
 
+
+======================================================================================================================================================================
+*/
 #include<stdio.h>
 #include<unistd.h>
 #include<stdlib.h>

@@ -1,3 +1,30 @@
+/*
+=================================================================================================================================================================================
+Name : handsonq11
+Author : Bhanuja Bhatt
+Description : Write a program to open a file, duplicate the file descriptor and append the file with both the descriptors and check whether the file is updated properly or not.
+		a. use dup
+		b. use dup2
+		c. use fcntl
+Date: 18th Aug, 2024
+=================================================================================================================================================================================
+
+=================================================================================================================================================================================
+Sample Output:
+Using dup
+fd1 = 3
+fd2 = 4
+Duplication successful...
+Using dup2
+fd1 = 3
+fd3 = 27
+Duplication successful...
+Using fcntl
+fd1 = 3
+fd4 = 28
+Duplication successful...
+=================================================================================================================================================================================
+*/
 #include<unistd.h>
 #include<stdio.h>
 #include<fcntl.h>

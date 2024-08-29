@@ -1,4 +1,28 @@
-#include <stdio.h> 
+/*
+======================================================================================================================================================================
+Name : handsonprog18.c
+Author : Bhanuja Bhatt
+Description : Write a program to perform Record locking.
+		a. Implement write lock
+		b. Implement read lock
+		Create three records in a file. Whenever you access a particular record, first lock it then modify/access to avoid race condition.
+Date: 25th Aug, 2024
+======================================================================================================================================================================
+
+======================================================================================================================================================================
+Sample Output:
+Enter the record number: 
+3
+Before locking the record for reading
+Read lock acquired successfully....
+The record details are:
+Roll No: 5
+Marks: 15
+Enter to unlock...
+
+Finish
+======================================================================================================================================================================
+*/#include <stdio.h> 
 #include <stdlib.h>
 #include <sys/types.h>
 #include <sys/stat.h> 

@@ -1,3 +1,20 @@
+/*
+==================================================================================================================================================================================Name : handsonprog17.c
+Author : bhanuja bhatt
+Description : Write a program to simulate online ticket reservation. Implement write lock Write a program to open a file, store a ticket number and exit. 
+	      Write a separate program, to open the file, implement write lock, read the ticket number, increment the number and print the new ticket number then close the file.
+Date: 25th Aug, 2024:
+==================================================================================================================================================================================
+==================================================================================================================================================================================
+Sample Output: 
+Before entering into critical section..
+Inside the critical section...
+Current ticket number: 16
+Press enter to unlock and exit
+Completed!
+
+==================================================================================================================================================================================
+*/
 #include<stdio.h>
 #include<unistd.h>
 #include<sys/stat.h>
