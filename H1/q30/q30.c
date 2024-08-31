@@ -49,10 +49,6 @@ int main ()
     	t.tm_sec = 0;*/
 
     	while (1) {
-		/*if(execl("/bin/sh", "sh", "/home/dell/sample.sh", (char*) NULL) == -1){
-			perror("execl");
-			exit(1);
-		}*/
         	sleep(60); 
 	}
 	
