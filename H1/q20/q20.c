@@ -22,7 +22,7 @@ New priority of the process set to: 37
 int main(int argc, char* argv[]){
 	int pid = getpid();
 	int priority = getpriority(PRIO_PROCESS, pid);
-	printf("Current priority of process: %d\n", priority+30);
+	printf("Current priority of process: %d\n", priority+20);
 	if(argc < 2){
 		printf("Error, please enter a value for priority\n");
 	}
@@ -30,7 +30,7 @@ int main(int argc, char* argv[]){
 		printf("Nice value = %s\n", argv[1]);
 		setpriority(PRIO_PROCESS, pid, atoi(argv[1]));
 		priority = getpriority(PRIO_PROCESS, pid);
-		printf("New priority of the process set to: %d\n", priority+30);
+		printf("New priority of the process set to: %d\n", priority+20);
 	}
 	return 0;
 }
